@@ -9,7 +9,7 @@ int simulation(int switch_var) { // A single simulation of the game show.
     int choice = rand() % 3; // The player chooses a door to stand next to.
 
     if (switch_var == 1) {
-        for (int door_index = 0;door_index < sizeof doors; door_index++) {
+        for (int door_index = 0;door_index < 3; door_index++) {
             if (door_index != choice && doors[door_index] == 0) { // Simulate the host picking a door to reveal.
                 return doors[3 - choice - door_index]; // Use the revealed door and the player's door to find the remaining door to switch to.
             }
