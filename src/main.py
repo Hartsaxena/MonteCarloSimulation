@@ -6,7 +6,7 @@ switch_wins = 0
 time_limit = 60
 
 while perf_counter() < time_limit:
-    if random.randint(1, 3) == 1:
+    if random.randint(0, 2) == 0:
         stay_wins += 1
     else:
         switch_wins += 1
