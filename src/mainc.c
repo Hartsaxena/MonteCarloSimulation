@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <pthread.h>
 
 
 int simulation(int switch_var) { // A single simulation of the game show.
