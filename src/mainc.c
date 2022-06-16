@@ -3,7 +3,7 @@
 #include <time.h>
 
 
-int simulation(int switch_var) {
+int simulation(int switch_var) { // A single simulation of the game show.
     int doors[3] = {0, 0, 0};
     doors[rand() % 3] = 1; // Make a random door the prize.
     int choice = rand() % 3; // The player chooses a door to stand next to.
@@ -28,11 +28,11 @@ int main() {
         0, 0, // Wins and losses for switching.
     };
     int time_limit = 60;
-    int switch_ = 1;
+    int switch_ = 1; // 1 = True, 0 = False
     int result;
-    int current_time = time(0);
     printf("Running simulation for %d seconds...", time_limit);
-    while (time(0) - current_time < time_limit) {
+    int current_time = time(0);
+    while (time(0) - current_time <= time_limit) {
         switch_ = 1 - switch_;
         result = simulation(switch_);
         win_losses[switch_ * 2 + (1 - result)]++; // Weird equation for 2D arrays. Records result of simulation.
